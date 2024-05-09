@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Satisfy', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--cor-primaria);
+    width: 100%;
+    background-image: url(../assets/Sk-loja.jpg);
+}
+
+.logo_header {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.titulo_secao {
+    font-family: var(--fonte-secundaria);
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5% 5%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tabela_principal {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: var(--fonte-principal);
+    margin: 0 auto;
+}
+
+.tabela_principal th,
+.tabela_principal td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabela_principal th {
+    background-color: var(--cor-primaria);
+    color: rgb(255, 255, 255);
+}
+
+.formulario {
+
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    text-align: left;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: var(--fonte-principal);
+    margin: 0 auto;
+}
+
+.formulario input {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.formulario select {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+
+.formulario button {
+    width: 10%;
+    padding: 10px;
+    color: white;
+    background-color: var(--cor-primaria);
+    border-style: none;
+    font-size: 16px;
+    font-family: var(--fonte-principal);
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#error-messages {
+    font-size: 16px;
+    text-align: center;
+    color: red;
+}
