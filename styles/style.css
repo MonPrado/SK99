@@ -101,3 +101,25 @@ header {
     text-align: center;
     color: red;
 }
+
+
+.container-filtro{
+    display: flex;
+    justify-content: center;
+}
+
+#filtrar-tabela{
+    width: 15%;
+    height: 35px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.texto-filtro{
+    height: 35px;
+    align-items: center;
+}
+
+.invisivel{
+    display: none;
+}
