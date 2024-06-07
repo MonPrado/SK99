@@ -1,4 +1,4 @@
-document.getElementById("produtoForm").addEventListener("submit", function(event) {
+document.getElementById("produtoForm").addEventListener("click", function (event) {
     event.preventDefault(); // Impede o envio do formulário
 
     // Limpa mensagens de erro anteriores
@@ -10,27 +10,27 @@ document.getElementById("produtoForm").addEventListener("submit", function(event
     var produto = document.getElementById("produto").value;
     var valor = parseFloat(document.getElementById("valor").value);
 
-     // Limpa mensagens de erro anteriores
-     limparMensagensErro();
+    // Limpa mensagens de erro anteriores
+    limparMensagensErro();
 
-     // Array para armazenar mensagens de erro
-     var mensagensErro = [];
- 
-     // Verificação da validade da quantidade e do valor
-     if (quantidade <= 0 || isNaN(quantidade)) {
-         mensagensErro.push("Quantidade inválida.");
-     }
-     
-     if (valor <= 0 || isNaN(valor)) {
-         mensagensErro.push("Valor inválido.");
-     }
-     
-     // Se houver mensagens de erro, exibe todas
-     if (mensagensErro.length > 0) {
-         exibirErros(mensagensErro);
-         return;
-     }
-    
+    // Array para armazenar mensagens de erro
+    var mensagensErro = [];
+
+    // Verificação da validade da quantidade e do valor
+    if (quantidade <= 0 || isNaN(quantidade)) {
+        mensagensErro.push("Quantidade inválida.");
+    }
+
+    if (valor <= 0 || isNaN(valor)) {
+        mensagensErro.push("Valor inválido.");
+    }
+
+    // Se houver mensagens de erro, exibe todas
+    if (mensagensErro.length > 0) {
+        exibirErros(mensagensErro);
+        return;
+    }
+
     // Se chegou até aqui, os campos estão corretos, então pode adicionar a encomenda
     adicionarEncomenda(nome, quantidade, produto, valor);
 });
@@ -38,7 +38,7 @@ document.getElementById("produtoForm").addEventListener("submit", function(event
 // Função para exibir mensagens de erro no div de erro
 function exibirErros(mensagensErro) {
     var errorDiv = document.getElementById("error-messages");
-    mensagensErro.forEach(function(mensagem) {
+    mensagensErro.forEach(function (mensagem) {
         var errorMessage = document.createElement("div");
         errorMessage.textContent = mensagem;
         errorMessage.style.color = "red";
@@ -92,7 +92,7 @@ function adicionarEncomenda(nome, quantidade, produto, valor) {
     document.getElementById("valor").value = "";
 
     // Adiciona evento de duplo clique para remover a linha recém-adicionada
-    newRow.addEventListener("dblclick", function() {
+    newRow.addEventListener("dblclick", function () {
         this.remove();
     });
 }
@@ -102,14 +102,14 @@ function limparMensagensErro() {
     errorDiv.innerHTML = ''; // Limpa o conteúdo do div de mensagens de erro
 }
 
-document.querySelectorAll(".linhas").forEach(function(linha) {
-    linha.addEventListener("dblclick", function() {
+document.querySelectorAll(".linhas").forEach(function (linha) {
+    linha.addEventListener("dblclick", function () {
         this.remove();
     });
 });
 
 // Adiciona evento de clique para remover a tabela
-document.querySelector(".tabela_principal").addEventListener("click", function(event) {
+document.querySelector(".tabela_principal").addEventListener("click", function (event) {
     // Verifica se o elemento clicado é a própria tabela
     if (event.target.classList.contains("tabela_principal")) {
         // Remove a tabela

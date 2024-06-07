@@ -1,27 +1,26 @@
-var campoFiltro = document.querySelector("#filtrar-tabela");
+const campoFiltro = document.querySelector('#filtrar-tabela');
 
 campoFiltro.addEventListener("input", function () {
-    var clientes = document.querySelectorAll(".linhas");
+    const clientes = document.querySelectorAll(".linhas");
+    const termoBusca = this.value.trim();
 
-    //Verifica se há um termo de busca
-    if (this.value.length > 0) {
-        for (var cli = 0; cli < clientes.length; cli++) {
-            var nome = clientes[cli].querySelector(".info-nome").textContent;
+    if (termoBusca.length > 0) {
+        const expressao = new RegExp(termoBusca, "i");
 
-            var expressao = new RegExp(this.value, "i");
+        // Filtra os clientes com base no termo de busca
+        clientes.forEach(cliente => {
+            const nome = cliente.querySelector(".info-nome").textContent;
 
-            //Verifica os clientes para filtrar a tabela
-            //if (nome != this.value) {
-            if(!expressao.test(nome)) {
-                clientes[cli].classList.add("invisivel");
+            if (!expressao.test(nome)) {
+                cliente.classList.add("invisivel");
             } else {
-                clientes[cli].classList.remove("invisivel");
+                cliente.classList.remove("invisivel");
             }
-        }
-}else{
-    for (var cli = 0; cli < clientes.length; cli++) {
-        clientes[cli].classList.remove("invisivel");
+        });
+    } else {
+        // Se não há termo de busca, exibe todos os clientes
+        clientes.forEach(cliente => {
+            cliente.classList.remove("invisivel");
+        });
     }
-}
-
-})
+});

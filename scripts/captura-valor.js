@@ -27,7 +27,7 @@ for (var count = 0; count < clientes.length; count++) {
 
         // Colore a linha em vermelho
         clientes[count].style.backgroundColor = "red";
-        clientes[count].querySelectorAll("td").forEach(function(cell) {
+        clientes[count].querySelectorAll("td").forEach(function (cell) {
             cell.style.color = "white";
         });
     } else {
