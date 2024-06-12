@@ -15,7 +15,9 @@
         <img src="assets/SK99.png" class="logo_header" alt="Spitfire-">
     </header>
     <section>
+        <button class="botaocep" id="ir-comentarios">Busque seu cep</button>
         <h1 class="titulo_secao">Encomendas</h1>
+
         <div class="container-filtro">
             <label for="filtrar-tabela" class="texto-filtro">Filtrar:</label>
             <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do cliente:">
@@ -92,6 +94,11 @@
     <script src="scripts/adicionar-encomenda.js"></script>
     <script src="scripts/filtrar-tabela.js"></script>
     <script src="scripts/buscar-encomendas.js"></script>
+    <script>
+        document.getElementById('ir-comentarios').addEventListener('click', function () {
+            window.location.href = 'comentario.html';
+        });
+    </script>
 </body>
 
 </html>
